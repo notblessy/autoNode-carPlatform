@@ -1,4 +1,4 @@
-# expREST-boilerplate
+# autoNode-carPlatform
 
 autoNode is a car selling platform based on Nodejs, Express and Sequelize.
 
