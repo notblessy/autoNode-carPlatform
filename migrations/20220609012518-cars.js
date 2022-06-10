@@ -4,7 +4,7 @@ module.exports = {
     await queryInterface.createTable('cars', {
       id: {
         allowNull: false,
-        autoIncremet: true,
+        autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
         unique: true,
