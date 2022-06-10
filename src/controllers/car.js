@@ -38,7 +38,7 @@ exports.createCars = async (req, res) => {
 
     const car = await db.Car.create(
       {
-        user_id: req.user.identity,
+        userId: req.user.identity,
         carBrandName,
         carGroupModel,
         carYear,
