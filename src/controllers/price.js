@@ -33,7 +33,7 @@ exports.createPrice = async (req, res) => {
 
       const dpType = await db.DownPaymentType.create(
         {
-          carPriceId: carPrice.carId,
+          carPriceId: carPrice.id,
           downPayment,
         },
         { transaction: trx }
@@ -47,7 +47,7 @@ exports.createPrice = async (req, res) => {
         { transaction: trx }
       );
 
-      if (installmentPrices && installmentPrices.length() > 0) {
+      if (installmentPrices && installmentPrices.length > 0) {
         const installmentPriceEnrichment = installmentPrices.map((inst) => {
           return {
             creditTypeId: insertCreditType.id,
@@ -59,7 +59,7 @@ exports.createPrice = async (req, res) => {
             durationEndYear: inst.durationEndYear ? inst.durationEndYear : null,
           };
         });
-        await db.InstallmentPrice.bulkCreate(installmentPriceEnrichment, {
+        await db.PriceInstallment.bulkCreate(installmentPriceEnrichment, {
           transaction: trx,
         });
       }
@@ -67,10 +67,10 @@ exports.createPrice = async (req, res) => {
 
       return res.json({
         success: true,
-        data: price,
+        data: carPrice,
       });
     } else {
-      const price = await db.CarPrice.create(
+      const carPrice = await db.CarPrice.create(
         {
           carId: req.params.carId,
           priceType,
@@ -82,7 +82,7 @@ exports.createPrice = async (req, res) => {
 
       return res.json({
         success: true,
-        data: price,
+        data: carPrice,
       });
     }
   } catch (error) {
