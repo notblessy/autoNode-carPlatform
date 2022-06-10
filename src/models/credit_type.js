@@ -22,8 +22,8 @@ const CreditType = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: 'Car',
-      tableName: 'cars',
+      modelName: 'CreditType',
+      tableName: 'credit_types',
     }
   );
   return CreditType;

@@ -23,8 +23,8 @@ const CarPrice = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: 'Car',
-      tableName: 'cars',
+      modelName: 'CarPrice',
+      tableName: 'car_prices',
     }
   );
   return CarPrice;

@@ -25,8 +25,8 @@ const PriceInstallment = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: 'Car',
-      tableName: 'cars',
+      modelName: 'PriceInstallment',
+      tableName: 'price_installments',
     }
   );
   return PriceInstallment;

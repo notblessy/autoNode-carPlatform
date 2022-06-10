@@ -14,14 +14,41 @@ const Car = (sequelize, DataTypes) => {
   Car.init(
     {
       id: { type: DataTypes.STRING, primaryKey: true },
-      userId: DataTypes.STRING,
-      carBrandName: DataTypes.STRING,
-      carGroupModel: DataTypes.STRING,
-      carYear: DataTypes.INTEGER,
-      carPlateNumber: DataTypes.STRING(32),
-      createdAt: DataTypes.DATE,
-      updatedAt: DataTypes.DATE,
-      deletedAt: DataTypes.DATE,
+      userId: {
+        type: DataTypes.STRING,
+        field: 'user_id',
+      },
+      carBrandName: {
+        type: DataTypes.STRING,
+        field: 'car_brand_name',
+      },
+      carGroupModel: {
+        type: DataTypes.STRING,
+        field: 'car_group_model',
+      },
+      carYear: {
+        type: DataTypes.INTEGER,
+        field: 'car_year',
+      },
+      carPlateNumber: {
+        type: DataTypes.STRING(32),
+        field: 'car_plate_number',
+      },
+      createdAt: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        field: 'created_at',
+      },
+      updatedAt: {
+        type: DataTypes.DATE,
+        allowNull: true,
+        field: 'updated_at',
+      },
+      deletedAt: {
+        type: DataTypes.DATE,
+        allowNull: true,
+        field: 'deleted_at',
+      },
     },
     {
       sequelize,

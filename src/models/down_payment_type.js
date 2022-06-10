@@ -22,8 +22,8 @@ const DownPaymentType = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: 'Car',
-      tableName: 'cars',
+      modelName: 'DownPaymentType',
+      tableName: 'down_payment_types',
     }
   );
   return DownPaymentType;
