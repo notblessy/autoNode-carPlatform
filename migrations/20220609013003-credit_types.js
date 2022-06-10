@@ -17,26 +17,26 @@ module.exports = {
         },
         allowNull: false,
         onDelete: 'CASCADE',
-        field: 'dp_type_id'
+        field: 'dp_type_id',
       },
       creditType: {
         type: Sequelize.STRING(64),
-        field: 'credit_type'
+        field: 'credit_type',
       },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        field: 'created_at'
+        field: 'created_at',
       },
       updatedAt: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE,
-        field: 'updated_at'
+        field: 'updated_at',
       },
       deletedAt: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE,
-        field: 'deleted_at'
+        field: 'deleted_at',
       },
     });
   },

@@ -17,38 +17,38 @@ module.exports = {
         },
         allowNull: false,
         onDelete: 'CASCADE',
-        field: 'user_id'
+        field: 'user_id',
       },
       carBrandName: {
         type: Sequelize.STRING,
-        field: 'car_brand_name'
+        field: 'car_brand_name',
       },
       carGroupModel: {
         type: Sequelize.STRING,
-        field: 'car_group_model'
+        field: 'car_group_model',
       },
       carYear: {
         type: Sequelize.INTEGER,
-        field: 'car_year'
+        field: 'car_year',
       },
       carPlateNumber: {
         type: Sequelize.STRING(32),
-        field: 'car_plate_number'
+        field: 'car_plate_number',
       },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        field: 'created_at'
+        field: 'created_at',
       },
       updatedAt: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE,
-        field: 'updated_at'
+        field: 'updated_at',
       },
       deletedAt: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE,
-        field: 'deleted_at'
+        field: 'deleted_at',
       },
     });
   },

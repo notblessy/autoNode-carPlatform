@@ -17,38 +17,38 @@ module.exports = {
         },
         allowNull: false,
         onDelete: 'CASCADE',
-        field: 'credit_type_id'
+        field: 'credit_type_id',
       },
       installmentDurationInMonth: {
         type: Sequelize.INTEGER,
-        field: 'installment_duration_in_month'
+        field: 'installment_duration_in_month',
       },
       installmentPrice: {
         type: Sequelize.INTEGER,
-        field: 'installment_price'
+        field: 'installment_price',
       },
       durationStartYear: {
         type: Sequelize.INTEGER,
-        field: 'duration_start_year'
+        field: 'duration_start_year',
       },
       durationEndYear: {
         type: Sequelize.INTEGER,
-        field: 'duration_End_year'
+        field: 'duration_End_year',
       },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        field: 'created_at'
+        field: 'created_at',
       },
       updatedAt: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE,
-        field: 'updated_at'
+        field: 'updated_at',
       },
       deletedAt: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE,
-        field: 'deleted_at'
+        field: 'deleted_at',
       },
     });
   },

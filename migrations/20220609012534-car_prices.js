@@ -17,29 +17,29 @@ module.exports = {
         },
         allowNull: false,
         onDelete: 'CASCADE',
-        field: 'car_id'
+        field: 'car_id',
       },
       priceType: {
         type: Sequelize.ENUM('CASH', 'CREDIT'),
-        field: 'price_type'
+        field: 'price_type',
       },
       price: {
         type: Sequelize.INTEGER,
-      }, 
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        field: 'created_at'
+        field: 'created_at',
       },
       updatedAt: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE,
-        field: 'updated_at'
+        field: 'updated_at',
       },
       deletedAt: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE,
-        field: 'deleted_at'
+        field: 'deleted_at',
       },
     });
   },
