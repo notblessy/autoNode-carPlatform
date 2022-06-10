@@ -8,17 +8,40 @@ const CreditType = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      this.belongsTo(models.DownPaymentType, {
+        foreignKey: 'dp_type_id',
+      });
+      this.hasMany(models.PriceInstallment, { foreignKey: 'credit_type_id' });
     }
   }
   CreditType.init(
     {
-      id: { type: DataTypes.STRING, primaryKey: true },
-      dpTypeId: DataTypes.INTEGER,
-      creditType: DataTypes.STRING(64),
-      createdAt: DataTypes.DATE,
-      updatedAt: DataTypes.DATE,
-      deletedAt: DataTypes.DATE,
+      id: { type: DataTypes.STRING, primaryKey: true, autoIncrement: true },
+      dpTypeId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        onDelete: 'CASCADE',
+        field: 'dp_type_id',
+      },
+      creditType: {
+        type: DataTypes.STRING(64),
+        field: 'credit_type',
+      },
+      createdAt: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        field: 'created_at',
+      },
+      updatedAt: {
+        type: DataTypes.DATE,
+        allowNull: true,
+        field: 'updated_at',
+      },
+      deletedAt: {
+        type: DataTypes.DATE,
+        allowNull: true,
+        field: 'deleted_at',
+      },
     },
     {
       sequelize,

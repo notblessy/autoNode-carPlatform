@@ -8,20 +8,49 @@ const PriceInstallment = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      this.belongsTo(models.CreditType, { foreignKey: 'credit_type_id' });
     }
   }
   PriceInstallment.init(
     {
-      id: { type: DataTypes.STRING, primaryKey: true },
-      creditTypeId: DataTypes.INTEGER,
-      installmentDurationInMonth: DataTypes.INTEGER,
-      installmentPrice: DataTypes.INTEGER,
-      durationStartYear: DataTypes.INTEGER,
-      durationEndYear: DataTypes.INTEGER,
-      createdAt: DataTypes.DATE,
-      updatedAt: DataTypes.DATE,
-      deletedAt: DataTypes.DATE,
+      id: { type: DataTypes.STRING, primaryKey: true, autoIncrement: true },
+      creditTypeId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        onDelete: 'CASCADE',
+        field: 'credit_type_id',
+      },
+      installmentDurationInMonth: {
+        type: DataTypes.INTEGER,
+        field: 'installment_duration_in_month',
+      },
+      installmentPrice: {
+        type: DataTypes.INTEGER,
+        field: 'installment_price',
+      },
+      durationStartYear: {
+        type: DataTypes.INTEGER,
+        field: 'duration_start_year',
+      },
+      durationEndYear: {
+        type: DataTypes.INTEGER,
+        field: 'duration_End_year',
+      },
+      createdAt: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        field: 'created_at',
+      },
+      updatedAt: {
+        type: DataTypes.DATE,
+        allowNull: true,
+        field: 'updated_at',
+      },
+      deletedAt: {
+        type: DataTypes.DATE,
+        allowNull: true,
+        field: 'deleted_at',
+      },
     },
     {
       sequelize,

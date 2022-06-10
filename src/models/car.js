@@ -8,7 +8,8 @@ const Car = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      this.belongsTo(models.User, { foreignKey: 'user_id' });
+      this.hasMany(models.CarPrice, { foreignKey: 'car_id' });
     }
   }
   Car.init(

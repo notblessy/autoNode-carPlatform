@@ -8,17 +8,38 @@ const DownPaymentType = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      this.belongsTo(models.CarPrice, { foreignKey: 'car_price_id' });
+      this.hasMany(models.CreditType, { foreignKey: 'dp_type_id' });
     }
   }
   DownPaymentType.init(
     {
-      id: { type: DataTypes.STRING, primaryKey: true },
-      carPriceId: DataTypes.INTEGER,
-      downPayment: DataTypes.INTEGER,
-      createdAt: DataTypes.DATE,
-      updatedAt: DataTypes.DATE,
-      deletedAt: DataTypes.DATE,
+      id: { type: DataTypes.STRING, primaryKey: true, autoIncrement: true },
+      carPriceId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        onDelete: 'CASCADE',
+        field: 'car_price_id',
+      },
+      downPayment: {
+        type: DataTypes.INTEGER,
+        field: 'down_payment',
+      },
+      createdAt: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        field: 'created_at',
+      },
+      updatedAt: {
+        type: DataTypes.DATE,
+        allowNull: true,
+        field: 'updated_at',
+      },
+      deletedAt: {
+        type: DataTypes.DATE,
+        allowNull: true,
+        field: 'deleted_at',
+      },
     },
     {
       sequelize,
