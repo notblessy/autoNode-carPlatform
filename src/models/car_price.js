@@ -1,7 +1,7 @@
 const { Model } = require('sequelize');
 
-const User = (sequelize, DataTypes) => {
-  class User extends Model {
+const CarPrice = (sequelize, DataTypes) => {
+  class CarPrice extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -11,7 +11,7 @@ const User = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  User.init(
+  CarPrice.init(
     {
       id: { type: DataTypes.STRING, primaryKey: true },
       carId: DataTypes.INTEGER,
