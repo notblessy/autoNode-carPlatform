@@ -14,7 +14,7 @@ const CarPrice = (sequelize, DataTypes) => {
   }
   CarPrice.init(
     {
-      id: { type: DataTypes.STRING, primaryKey: true, autoIncrement: true },
+      id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
       carId: {
         type: DataTypes.INTEGER,
         allowNull: false,

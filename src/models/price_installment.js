@@ -13,7 +13,7 @@ const PriceInstallment = (sequelize, DataTypes) => {
   }
   PriceInstallment.init(
     {
-      id: { type: DataTypes.STRING, primaryKey: true, autoIncrement: true },
+      id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
       creditTypeId: {
         type: DataTypes.INTEGER,
         allowNull: false,

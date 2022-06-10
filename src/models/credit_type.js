@@ -16,7 +16,7 @@ const CreditType = (sequelize, DataTypes) => {
   }
   CreditType.init(
     {
-      id: { type: DataTypes.STRING, primaryKey: true, autoIncrement: true },
+      id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
       dpTypeId: {
         type: DataTypes.INTEGER,
         allowNull: false,

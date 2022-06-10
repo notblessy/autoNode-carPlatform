@@ -14,7 +14,7 @@ const DownPaymentType = (sequelize, DataTypes) => {
   }
   DownPaymentType.init(
     {
-      id: { type: DataTypes.STRING, primaryKey: true, autoIncrement: true },
+      id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
       carPriceId: {
         type: DataTypes.INTEGER,
         allowNull: false,
