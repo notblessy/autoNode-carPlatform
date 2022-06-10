@@ -27,7 +27,7 @@ const User = (sequelize, DataTypes) => {
       tableName: 'cars',
     }
   );
-  return User;
+  return CarPrice;
 };
 
-module.exports = User;
+module.exports = CarPrice;

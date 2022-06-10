@@ -26,7 +26,7 @@ const User = (sequelize, DataTypes) => {
       tableName: 'cars',
     }
   );
-  return User;
+  return DownPaymentType;
 };
 
-module.exports = User;
+module.exports = DownPaymentType;
