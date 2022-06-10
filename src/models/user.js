@@ -13,11 +13,15 @@ const User = (sequelize, DataTypes) => {
   }
   User.init(
     {
-      id: { type: DataTypes.STRING, primaryKey: true },
+      id: {
+        type: DataTypes.STRING,
+        primaryKey: true,
+        default: sequelize.fn('uuid_generate_v4'),
+      },
       name: DataTypes.STRING,
       email: DataTypes.STRING,
       password: DataTypes.STRING,
-      role: DataTypes.ENUM('ADMIN', 'CUSTOMER'),
+      role: DataTypes.STRING(36),
       createdAt: {
         type: DataTypes.DATE,
         allowNull: false,
